@@ -1,26 +1,28 @@
 package com.example.demo.book;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 
 import java.awt.print.Book;
 import java.util.List;
 
 @RestController
-@RequestMapping("/book")
+@RequestMapping("/books")
 
 public class BookController {
 
-    private final BookService service;
-
-    public BookController(@Qualifier("bookService") BookService service) {
-        this.service = service;
-    }
+    @Autowired
+    private BookService service;
 
     @GetMapping
-    public List<Book> getBook() {
+    public List<BookEntity> getBook() {
         return service.getBook();
     }
+
+   // @PostMapping("/miraç")
 }

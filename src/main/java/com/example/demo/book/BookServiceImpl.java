@@ -1,13 +1,10 @@
 package com.example.demo.book;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import java.awt.print.Book;
 import java.util.List;
 @Service
-@Component
 public class BookServiceImpl implements BookService {
 
     @Autowired
@@ -15,7 +12,7 @@ public class BookServiceImpl implements BookService {
 
 
     @Override
-    public List<Book> getBook() {
+    public List<BookEntity> getBook() {
         return  bookRepository.findAll();
 
     }

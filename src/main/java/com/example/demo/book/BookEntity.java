@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 @Data
 @AllArgsConstructor
@@ -14,49 +15,19 @@ import java.util.Date;
 @Entity
 @Table(name = "books")
 public class BookEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id")
     private Integer id;
+
+    @Column(name="name")
     private String name;
+
+    @Column(name="author")
     private String author;
-    private Date history;
 
-    public Integer getId()
-    {
-        return id;
-    }
+    @Column(name="history")
+    private LocalDate date;
 
-    public void setId(int id)
-    {
-        this.id = id;
-    }
-
-    public String getName()
-    {
-        return name;
-    }
-
-    public void setName(String name)
-    {
-        this.name = name;
-    }
-
-    public String getAuthor()
-    {
-        return author;
-    }
-
-    public void setAuthor(String author)
-    {
-        this.author = author;
-    }
-    public Date getHistory()
-    {
-        return history;
-    }
-
-    public void setHistory(Date history)
-    {
-        this.history = history;
-    }
 }
