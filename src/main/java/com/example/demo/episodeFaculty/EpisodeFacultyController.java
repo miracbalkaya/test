@@ -1,5 +1,6 @@
-package com.example.demo.book;
+package com.example.demo.episodeFaculty;
 
+import com.example.demo.book.BookEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,17 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/books")
+@RequestMapping("/view1")
 
-public class BookController {
+public class EpisodeFacultyController {
 
     @Autowired
-    private BookService service;
+    private EpisodeFacultyService service;
 
     @GetMapping
-    public List<BookEntity> getBook() {
-        return service.getBook();
+    public List<EpisodeFacultyEntity> getview1()  {
+        return service.getview1();
     }
-
-   // @PostMapping("/miraç")
 }

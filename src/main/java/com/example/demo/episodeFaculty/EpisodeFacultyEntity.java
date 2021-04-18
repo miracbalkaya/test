@@ -1,4 +1,4 @@
-package com.example.demo.book;
+package com.example.demo.episodeFaculty;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,21 +13,17 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @DynamicUpdate
 @Entity
-@Table(name = "books")
-public class BookEntity {
+@Table(name = "view1")
+public class EpisodeFacultyEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="id")
-    private Integer id;
+    @Column(name="episodeid")
+    private Integer episodeid;
+
+    @Column(name="episodename")
+    private String episodename;
 
     @Column(name="name")
     private String name;
-
-    @Column(name="author")
-    private String author;
-
-    @Column(name="history")
-    private LocalDate date;
-
 }
